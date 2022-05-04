@@ -2,6 +2,7 @@ import com.my.creds.Profile;
 import com.my.creds.ProfileDataGenerator;
 import com.my.pages.LoginPage;
 import com.my.pages.RegistrationPage;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,27 +15,30 @@ public class RegistrationPageTest {
     private Profile profile;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         profile = ProfileDataGenerator.getRandom();
     }
 
     @Test
-    public void registrationWithValidData(){
-        RegistrationPage registrationPage = open(RegistrationPage.URL,RegistrationPage.class);
+    @DisplayName("registrationWithValidData")
+    public void registrationWithValidData() {
+        RegistrationPage registrationPage = open(RegistrationPage.URL, RegistrationPage.class);
+
         registrationPage.registerNewUser(profile);
 
         LoginPage loginPage = page(LoginPage.class);
-
         loginPage.isLoginPage();
     }
 
     @Test
-    public void registrationWithShortPassword(){
-        RegistrationPage registrationPage = open(RegistrationPage.URL,RegistrationPage.class);
-        profile.setPassword("123");
+    @DisplayName("registrationWithShortPassword")
+    public void registrationWithShortPassword() {
+        RegistrationPage registrationPage = open(RegistrationPage.URL, RegistrationPage.class);
 
+        profile.setPassword("123");
         registrationPage.registerNewUser(profile);
 
-        registrationPage.isInvalidPassportTextDisplayed();
+        assertTrue(registrationPage.isInvalidPassportTextDisplayed());
+
     }
 }
