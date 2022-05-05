@@ -1,0 +1,7 @@
+com\my\pages\RegistrationPage.class
+com\my\creds\Profile.class
+com\my\pages\ProfilePage.class
+com\my\pages\MainPage.class
+com\my\pages\ForgotPasswordPage.class
+com\my\pages\LoginPage.class
+com\my\creds\ProfileDataGenerator.class
