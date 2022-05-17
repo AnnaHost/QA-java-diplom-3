@@ -34,7 +34,7 @@ public class RegistrationTest {
         registrationPage.registerNewUser(profile);
 
         LoginPage loginPage = page(LoginPage.class);
-        loginPage.isLoginPage();
+        loginPage.checkLoginPage();
     }
 
     @Test
@@ -45,7 +45,7 @@ public class RegistrationTest {
         profile.setPassword("123");
         registrationPage.registerNewUser(profile);
 
-        assertTrue(registrationPage.isInvalidPassportTextDisplayed());
+        assertTrue(registrationPage.checkInvalidPassportTextDisplayed());
 
     }
 }

@@ -23,7 +23,7 @@ public class LoginPage {
     SelenideElement loginButton;
 
 
-    public void isLoginPage() {
+    public void checkLoginPage() {
         loginHeader.shouldHave(Condition.text("Вход"));
     }
 
@@ -41,7 +41,7 @@ public class LoginPage {
         passwordInput.setValue(password);
     }
 
-    public void isUnauthorised() {
+    public void checkUnauthorised() {
         loginButton.shouldBe(Condition.visible);
     }
 

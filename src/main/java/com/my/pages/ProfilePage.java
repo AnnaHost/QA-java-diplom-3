@@ -17,7 +17,7 @@ public class ProfilePage {
     SelenideElement constructorButton;
 
 
-    public void isProfilePage() {
+    public void checkProfilePage() {
         signOutButton.shouldHave(Condition.text("Выход"));
     }
 

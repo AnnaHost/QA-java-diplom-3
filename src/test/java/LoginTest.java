@@ -20,6 +20,7 @@ public class LoginTest {
 
     @Before
     public void setUp() {
+        //Configuration.browser = "firefox";  запуск тестов в firefox
         profile = ProfileDataGenerator.getRandom();
         RegistrationPage registrationPage = open(RegistrationPage.URL, RegistrationPage.class);
         registrationPage.registerNewUser(profile);
@@ -40,7 +41,7 @@ public class LoginTest {
         loginPage.login(profile);
 
         mainPage = page(MainPage.class);
-        mainPage.isUserAuthorised();
+        mainPage.checkUserAuthorised();
     }
 
     @Test
@@ -53,7 +54,7 @@ public class LoginTest {
         loginPage.login(profile);
 
         mainPage = page(MainPage.class);
-        mainPage.isUserAuthorised();
+        mainPage.checkUserAuthorised();
     }
 
     @Test
@@ -66,7 +67,7 @@ public class LoginTest {
         loginPage.login(profile);
 
         MainPage mainPage = page(MainPage.class);
-        mainPage.isUserAuthorised();
+        mainPage.checkUserAuthorised();
     }
 
     @Test
@@ -79,6 +80,6 @@ public class LoginTest {
         loginPage.login(profile);
 
         MainPage mainPage = page(MainPage.class);
-        mainPage.isUserAuthorised();
+        mainPage.checkUserAuthorised();
     }
 }

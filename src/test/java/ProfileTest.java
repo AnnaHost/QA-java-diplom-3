@@ -40,7 +40,7 @@ public class ProfileTest {
         mainPage.goToProfilePage();
 
         ProfilePage profilePage = page(ProfilePage.class);
-        profilePage.isProfilePage();
+        profilePage.checkProfilePage();
     }
 
     @Test
@@ -55,6 +55,6 @@ public class ProfileTest {
         profilePage.logout();
 
         loginPage = page(LoginPage.class);
-        loginPage.isUnauthorised();
+        loginPage.checkUnauthorised();
     }
 }

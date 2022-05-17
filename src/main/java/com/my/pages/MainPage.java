@@ -56,7 +56,7 @@ public class MainPage {
         linkToProfilePage.click();
     }
 
-    public void isUserAuthorised(){
+    public void checkUserAuthorised(){
         createOrderButton.shouldHave(Condition.text("Оформить заказ"));
     }
 
@@ -64,7 +64,7 @@ public class MainPage {
         bunsTab.click();
     }
 
-    public void isBunsTabOpen(){
+    public void checkBunsTabOpen(){
         bunsTitle.shouldBe(visible);
     }
 
@@ -72,7 +72,7 @@ public class MainPage {
         saucesTab.click();
     }
 
-    public void isSaucesTabOpen(){
+    public void checkSaucesTabOpen(){
         saucesTitle.shouldBe(visible);
     }
 
@@ -80,11 +80,11 @@ public class MainPage {
         fillingsTab.click();
     }
 
-    public void isFillingsTabOpen(){
+    public void checkFillingsTabOpen(){
         fillingsTitle.shouldBe(visible);
     }
 
-    public void isConstructorBlockVisible(){
+    public void checkConstructorBlockVisible(){
         constructorLabel.shouldBe(visible);
     }
 }

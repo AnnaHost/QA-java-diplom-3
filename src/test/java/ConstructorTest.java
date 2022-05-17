@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.my.creds.Profile;
 import com.my.creds.ProfileDataGenerator;
@@ -10,8 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ConstructorTest {
 
@@ -41,7 +41,7 @@ public class ConstructorTest {
         profilePage.goToConstructorPageUsingConstructorButton();
 
         mainPage = page(MainPage.class);
-        mainPage.isConstructorBlockVisible();
+        mainPage.checkConstructorBlockVisible();
     }
 
     @Test
@@ -56,7 +56,7 @@ public class ConstructorTest {
         profilePage.goToConstructorPageUsingLogo();
 
         mainPage = page(MainPage.class);
-        mainPage.isConstructorBlockVisible();
+        mainPage.checkConstructorBlockVisible();
     }
 
 
@@ -64,10 +64,8 @@ public class ConstructorTest {
     @DisplayName("Переход в раздел «Соусы»")
     public void switchToSauces() {
         MainPage mainPage = open(MainPage.URL, MainPage.class);
-
         mainPage.goToSaucesTab();
-
-        mainPage.isSaucesTabOpen();
+        mainPage.checkSaucesTabOpen();
     }
 
     @Test
@@ -75,19 +73,15 @@ public class ConstructorTest {
     public void switchToBuns() {
         MainPage mainPage = open(MainPage.URL, MainPage.class);
         mainPage.goToFillingsTab();
-
         mainPage.goToBunsTab();
-
-        mainPage.isBunsTabOpen();
+        mainPage.checkBunsTabOpen();
     }
 
     @Test
     @DisplayName("Переход в раздел «Начинки»")
     public void switchToFillings() {
         MainPage mainPage = open(MainPage.URL, MainPage.class);
-
         mainPage.goToFillingsTab();
-
-        mainPage.isFillingsTabOpen();
+        mainPage.checkFillingsTabOpen();
     }
 }

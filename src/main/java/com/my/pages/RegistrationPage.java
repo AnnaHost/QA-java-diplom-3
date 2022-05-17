@@ -46,7 +46,7 @@ public class RegistrationPage {
         registrationButton.click();
     }
 
-    public boolean isInvalidPassportTextDisplayed() {
+    public boolean checkInvalidPassportTextDisplayed() {
         return invalidPassportText.isDisplayed();
     }
 
